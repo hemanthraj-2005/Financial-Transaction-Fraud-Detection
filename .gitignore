@@ -1,0 +1,20 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+
+# Large / generated data (keep folders via .gitkeep)
+data/raw/*
+data/processed/*
+data/synthetic/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/synthetic/.gitkeep
+models/*.joblib
+models/*.pkl
+spark-warehouse/
+metastore_db/
+derby.log        

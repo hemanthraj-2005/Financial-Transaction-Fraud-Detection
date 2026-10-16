@@ -1,0 +1,26 @@
+# Core data stack
+pandas>=2.0
+numpy>=1.24
+pyarrow>=14.0
+
+# Big Data
+pyspark>=3.5
+
+# Graph analytics
+networkx>=3.2
+python-louvain>=0.16
+
+# Machine learning
+scikit-learn>=1.3
+xgboost>=2.0
+joblib>=1.3
+
+# Visualization + dashboard
+plotly>=5.18
+streamlit>=1.30
+
+# Testing
+pytest>=7.4
+
+# Optional: automatic PaySim download from Kaggle (manual download also works)
+kaggle>=1.6
