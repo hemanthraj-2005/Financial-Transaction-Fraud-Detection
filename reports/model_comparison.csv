@@ -1,0 +1,6 @@
+feature_set,model,n_features,threshold,val_pr_auc,test_precision,test_recall,test_f1,test_roc_auc,test_pr_auc,tp,fp,fn,tn,fit_seconds
+tx_only,random_forest,17,0.591066,0.017038,0.08,0.065574,0.072072,0.884158,0.042269,4,46,57,191176,0.55
+tx_graph,logistic_regression,55,0.0,0.009554,0.0,0.0,0.0,0.891755,0.007037,0,14,61,191208,0.24
+tx_graph,random_forest,55,0.595935,0.024512,0.035294,0.04918,0.041096,0.881525,0.007264,3,82,58,191140,0.51
+tx_graph,xgboost,55,0.93259,0.008577,0.034483,0.032787,0.033613,0.860514,0.023281,2,56,59,191166,0.85
+tx_graph_balance,random_forest,63,0.485587,0.933725,1.0,0.868852,0.929825,0.968247,0.892872,53,0,8,191222,0.58

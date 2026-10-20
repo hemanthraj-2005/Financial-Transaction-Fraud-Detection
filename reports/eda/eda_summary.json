@@ -1,0 +1,27 @@
+{
+  "n_transactions": 6362620,
+  "n_accounts": 9073900,
+  "n_fraud": 8213,
+  "fraud_rate_pct": 0.1291,
+  "step_range": [
+    1,
+    743
+  ],
+  "flag_rule_recall_pct": 0.19,
+  "flag_rule_precision_pct": 100.0,
+  "leakage_check_pct_balance_emptied": {
+    "fraud": 97.55,
+    "legit": 42.72,
+    "note": "Computed on TRANSFER and CASH_OUT rows only. A large gap means balance features can leak the label (handled in the Phase 7 ablation)."
+  },
+  "charts": {
+    "01_class_imbalance": "/Users/hemanthraj/Financial-Transaction-Fraud-Detection/Financial-Transaction-Fraud-Detection/reports/eda/01_class_imbalance.html",
+    "02_fraud_by_type": "/Users/hemanthraj/Financial-Transaction-Fraud-Detection/Financial-Transaction-Fraud-Detection/reports/eda/02_fraud_by_type.html",
+    "03_fraud_over_time": "/Users/hemanthraj/Financial-Transaction-Fraud-Detection/Financial-Transaction-Fraud-Detection/reports/eda/03_fraud_over_time.html",
+    "04_fraud_by_hour": "/Users/hemanthraj/Financial-Transaction-Fraud-Detection/Financial-Transaction-Fraud-Detection/reports/eda/04_fraud_by_hour.html",
+    "05_amount_distribution": "/Users/hemanthraj/Financial-Transaction-Fraud-Detection/Financial-Transaction-Fraud-Detection/reports/eda/05_amount_distribution.html",
+    "06_top_accounts": "/Users/hemanthraj/Financial-Transaction-Fraud-Detection/Financial-Transaction-Fraud-Detection/reports/eda/06_top_accounts.html",
+    "07_balance_leakage": "/Users/hemanthraj/Financial-Transaction-Fraud-Detection/Financial-Transaction-Fraud-Detection/reports/eda/07_balance_leakage.html",
+    "08_flag_rule": "/Users/hemanthraj/Financial-Transaction-Fraud-Detection/Financial-Transaction-Fraud-Detection/reports/eda/08_flag_rule.html"
+  }
+}

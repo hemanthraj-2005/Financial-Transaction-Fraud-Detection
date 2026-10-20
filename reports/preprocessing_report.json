@@ -1,0 +1,218 @@
+{
+  "engine": "spark",
+  "source": "paysim",
+  "synthetic_data_warning": false,
+  "input_path": "/Users/hemanthraj/Financial-Transaction-Fraud-Detection/Financial-Transaction-Fraud-Detection/data/raw/PS_20174392719_1491204439457_log.csv",
+  "nrows_limit": null,
+  "runtime_seconds": 78.25,
+  "cleaning": {
+    "n_input": 6362620,
+    "rule_violations": {
+      "null_required": 0,
+      "negative_amount": 0,
+      "invalid_step": 0,
+      "unknown_type": 0,
+      "invalid_label": 0,
+      "invalid_flag_column": 0,
+      "negative_balance": 0,
+      "self_transfer": 0,
+      "blank_account": 0
+    },
+    "n_invalid_removed": 0,
+    "zero_amount_rows": 16,
+    "n_clean": 6362620,
+    "duplicates_removed": 0
+  },
+  "n_accounts": 9073900,
+  "class_balance": {
+    "n_total": 6362620,
+    "n_fraud": 8213,
+    "n_legitimate": 6354407,
+    "fraud_rate_pct": 0.1291,
+    "imbalance_ratio_legit_per_fraud": 773.7,
+    "severity": "severe imbalance (<1% fraud)",
+    "suggested_scale_pos_weight": 773.7,
+    "recommendations": [
+      "Do not use accuracy: predicting 'legitimate' every time would already score 99.87%.",
+      "Evaluate with precision, recall, F1 and especially PR-AUC (plus ROC-AUC).",
+      "Handle imbalance with class weights / scale_pos_weight (suggested value above) rather than oversampling.",
+      "If resampling is ever used, apply it to the TRAINING split only, never to the test split.",
+      "Split by time so the test period is genuinely in the future."
+    ]
+  },
+  "fraud_rate_by_type": [
+    {
+      "type": "CASH_IN",
+      "n_transactions": 1399284,
+      "n_fraud": 0,
+      "fraud_rate_pct": 0.0,
+      "total_amount": 236367391912.46146,
+      "fraud_amount": 0.0
+    },
+    {
+      "type": "CASH_OUT",
+      "n_transactions": 2237500,
+      "n_fraud": 4116,
+      "fraud_rate_pct": 0.184,
+      "total_amount": 394412995224.4884,
+      "fraud_amount": 5989202243.830002
+    },
+    {
+      "type": "DEBIT",
+      "n_transactions": 41432,
+      "n_fraud": 0,
+      "fraud_rate_pct": 0.0,
+      "total_amount": 227199221.28000015,
+      "fraud_amount": 0.0
+    },
+    {
+      "type": "PAYMENT",
+      "n_transactions": 2151495,
+      "n_fraud": 0,
+      "fraud_rate_pct": 0.0,
+      "total_amount": 28093371138.369774,
+      "fraud_amount": 0.0
+    },
+    {
+      "type": "TRANSFER",
+      "n_transactions": 532909,
+      "n_fraud": 4097,
+      "fraud_rate_pct": 0.7688,
+      "total_amount": 485291987263.17126,
+      "fraud_amount": 6067213184.01
+    }
+  ],
+  "column_inspection_note": "computed on the first 100,000 rows only (Spark engine)",
+  "column_inspection": [
+    {
+      "column": "step",
+      "dtype": "int64",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "n_unique": 10,
+      "examples": "1, 2, 3"
+    },
+    {
+      "column": "type",
+      "dtype": "str",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "n_unique": 5,
+      "examples": "PAYMENT, TRANSFER, CASH_OUT"
+    },
+    {
+      "column": "amount",
+      "dtype": "float64",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "n_unique": 99470,
+      "examples": "9839.64, 1864.28, 181.0"
+    },
+    {
+      "column": "nameOrig",
+      "dtype": "str",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "n_unique": 100000,
+      "examples": "C1231006815, C1666544295, C1305486145"
+    },
+    {
+      "column": "oldbalanceOrg",
+      "dtype": "float64",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "n_unique": 58013,
+      "examples": "170136.0, 21249.0, 181.0"
+    },
+    {
+      "column": "newbalanceOrig",
+      "dtype": "float64",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "n_unique": 48118,
+      "examples": "160296.36, 19384.72, 0.0"
+    },
+    {
+      "column": "nameDest",
+      "dtype": "str",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "n_unique": 51551,
+      "examples": "M1979787155, M2044282225, C553264065"
+    },
+    {
+      "column": "oldbalanceDest",
+      "dtype": "float64",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "n_unique": 53663,
+      "examples": "0.0, 21182.0, 41898.0"
+    },
+    {
+      "column": "newbalanceDest",
+      "dtype": "float64",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "n_unique": 19158,
+      "examples": "0.0, 40348.79, 157982.12"
+    },
+    {
+      "column": "isFraud",
+      "dtype": "int64",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "n_unique": 2,
+      "examples": "0, 1"
+    },
+    {
+      "column": "isFlaggedFraud",
+      "dtype": "int64",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "n_unique": 1,
+      "examples": "0"
+    }
+  ],
+  "outputs": {
+    "transactions": "/Users/hemanthraj/Financial-Transaction-Fraud-Detection/Financial-Transaction-Fraud-Detection/data/processed/transactions_clean.parquet",
+    "accounts": "/Users/hemanthraj/Financial-Transaction-Fraud-Detection/Financial-Transaction-Fraud-Detection/data/processed/account_aggregates.parquet",
+    "fraud_stats_by_type": "/Users/hemanthraj/Financial-Transaction-Fraud-Detection/Financial-Transaction-Fraud-Detection/data/processed/fraud_stats_by_type.csv",
+    "fraud_stats_by_day": "/Users/hemanthraj/Financial-Transaction-Fraud-Detection/Financial-Transaction-Fraud-Detection/data/processed/fraud_stats_by_day.csv"
+  },
+  "feature_groups": {
+    "time": [
+      "hour_of_day",
+      "day",
+      "is_night"
+    ],
+    "type_encoding": [
+      "type_code",
+      "type_PAYMENT",
+      "type_TRANSFER",
+      "type_CASH_OUT",
+      "type_CASH_IN",
+      "type_DEBIT"
+    ],
+    "balance_derived_LEAKAGE_RISK": [
+      "balance_error_orig",
+      "balance_error_dest",
+      "orig_balance_emptied",
+      "amount_to_oldbalance_ratio"
+    ],
+    "history_past_only": [
+      "orig_prev_tx_count",
+      "orig_prev_amount_sum",
+      "orig_prev_amount_mean",
+      "orig_steps_since_last_tx",
+      "dest_prev_tx_count",
+      "dest_prev_amount_sum",
+      "dest_steps_since_last_tx"
+    ]
+  },
+  "notes": [
+    "timestamp = 2024-01-01 00:00:00 + (step-1) hours. The date is an arbitrary anchor; only hour-of-day and day offset are meaningful.",
+    "History features use only earlier rows (ordered by step, then tx_id) and never the label.",
+    "Account aggregates cover ALL rows; for ML they must be recomputed from the training window only.",
+    "Columns starting with 'label_' are label-derived and must not be used as model inputs."
+  ]
+}

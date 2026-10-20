@@ -1,0 +1,227 @@
+{
+  "runtime_seconds": 31.01,
+  "selection": {
+    "n_input_tx": 6362620,
+    "n_tx_used": 500000,
+    "max_step_filter": null,
+    "max_tx_limit": 500000,
+    "truncated_by_max_tx": true,
+    "first_step_used": 1,
+    "last_step_used": 20
+  },
+  "n_nodes": 714803,
+  "n_edges": 500000,
+  "density": 9.785834774668618e-07,
+  "components": {
+    "n_weakly_connected_components": 214803,
+    "largest_weakly_connected_component": 92,
+    "largest_strongly_connected_component": 1,
+    "n_accounts_in_small_cycles": 0
+  },
+  "betweenness": {
+    "scope": "largest weakly connected component (92 nodes)",
+    "nodes_in_scope": 92,
+    "exact": true,
+    "k_sampled_start_nodes": null,
+    "note": "Approximate and unweighted. Accounts outside the scope have betweenness 0."
+  },
+  "top_accounts": {
+    "by_pagerank": [
+      {
+        "account": "C985934102",
+        "pagerank": 4.494005693863079e-05
+      },
+      {
+        "account": "C1286084959",
+        "pagerank": 4.301133808776115e-05
+      },
+      {
+        "account": "C248609774",
+        "pagerank": 4.301133808776115e-05
+      },
+      {
+        "account": "C665576141",
+        "pagerank": 4.1082619236891504e-05
+      },
+      {
+        "account": "C2083562754",
+        "pagerank": 4.060043952417409e-05
+      },
+      {
+        "account": "C1590550415",
+        "pagerank": 3.915390038602186e-05
+      },
+      {
+        "account": "C1360767589",
+        "pagerank": 3.867172067330445e-05
+      },
+      {
+        "account": "C977993101",
+        "pagerank": 3.867172067330445e-05
+      },
+      {
+        "account": "C451111351",
+        "pagerank": 3.7225181535152216e-05
+      },
+      {
+        "account": "C306206744",
+        "pagerank": 3.577864239699998e-05
+      }
+    ],
+    "by_betweenness": [
+      {
+        "account": "C1000008582",
+        "betweenness": 0.0
+      },
+      {
+        "account": "C1000009135",
+        "betweenness": 0.0
+      },
+      {
+        "account": "C1000012640",
+        "betweenness": 0.0
+      },
+      {
+        "account": "C1000015936",
+        "betweenness": 0.0
+      },
+      {
+        "account": "C1000018663",
+        "betweenness": 0.0
+      },
+      {
+        "account": "C1000022742",
+        "betweenness": 0.0
+      },
+      {
+        "account": "C1000028246",
+        "betweenness": 0.0
+      },
+      {
+        "account": "C100003513",
+        "betweenness": 0.0
+      },
+      {
+        "account": "C1000035425",
+        "betweenness": 0.0
+      },
+      {
+        "account": "C1000037689",
+        "betweenness": 0.0
+      }
+    ],
+    "by_total_degree": [
+      {
+        "account": "C985934102",
+        "total_degree": 91
+      },
+      {
+        "account": "C1286084959",
+        "total_degree": 87
+      },
+      {
+        "account": "C248609774",
+        "total_degree": 87
+      },
+      {
+        "account": "C665576141",
+        "total_degree": 83
+      },
+      {
+        "account": "C2083562754",
+        "total_degree": 82
+      },
+      {
+        "account": "C1590550415",
+        "total_degree": 79
+      },
+      {
+        "account": "C1360767589",
+        "total_degree": 78
+      },
+      {
+        "account": "C977993101",
+        "total_degree": 78
+      },
+      {
+        "account": "C451111351",
+        "total_degree": 75
+      },
+      {
+        "account": "C306206744",
+        "total_degree": 72
+      }
+    ],
+    "by_pass_through_ratio": [
+      {
+        "account": "C1579470022",
+        "pass_through_ratio": 0.3682179311904668
+      },
+      {
+        "account": "C1660355507",
+        "pass_through_ratio": 0.2870701628849345
+      },
+      {
+        "account": "C284424206",
+        "pass_through_ratio": 0.1666678476768841
+      },
+      {
+        "account": "C1093613375",
+        "pass_through_ratio": 0.13002018771568966
+      },
+      {
+        "account": "C1708387046",
+        "pass_through_ratio": 0.042118735941124655
+      },
+      {
+        "account": "C1100871710",
+        "pass_through_ratio": 0.017498483481545223
+      },
+      {
+        "account": "C1000008582",
+        "pass_through_ratio": 0.0
+      },
+      {
+        "account": "C1000009135",
+        "pass_through_ratio": 0.0
+      },
+      {
+        "account": "C1000012640",
+        "pass_through_ratio": 0.0
+      },
+      {
+        "account": "C1000015936",
+        "pass_through_ratio": 0.0
+      }
+    ]
+  },
+  "fraud_vs_graph_signals": {
+    "note": "Uses the fraud label: for display and reporting only, not a model input.",
+    "n_accounts_touching_fraud": 463,
+    "comparison": {
+      "no_fraud": {
+        "total_degree": 1.395254,
+        "pagerank": 1e-06,
+        "pass_through_ratio": 1e-06,
+        "reciprocal_partners": 0.0,
+        "in_small_cycle": 0.0
+      },
+      "touches_fraud": {
+        "total_degree": 7.157667,
+        "pagerank": 4e-06,
+        "pass_through_ratio": 0.0,
+        "reciprocal_partners": 0.0,
+        "in_small_cycle": 0.0
+      }
+    }
+  },
+  "outputs": {
+    "edges": "/Users/hemanthraj/Financial-Transaction-Fraud-Detection/Financial-Transaction-Fraud-Detection/data/processed/graph_edges.parquet",
+    "metrics": "/Users/hemanthraj/Financial-Transaction-Fraud-Detection/Financial-Transaction-Fraud-Detection/data/processed/graph_metrics.parquet"
+  },
+  "notes": [
+    "Node metrics are label-free. For ML, rebuild with --max-step set to the end of the training window.",
+    "Betweenness is approximate (sampled) and unweighted; PageRank is weighted by amount.",
+    "Graph metrics are risk indicators, not proof of fraud."
+  ]
+}

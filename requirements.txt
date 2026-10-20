@@ -24,3 +24,5 @@ pytest>=7.4
 
 # Optional: automatic PaySim download from Kaggle (manual download also works)
 kaggle>=1.6
+
+scipy>=1.11

@@ -1,0 +1,88 @@
+{
+  "status": "ok",
+  "started_at_utc": "2026-10-18T14:08:32+00:00",
+  "total_seconds": 272.55,
+  "args": {
+    "source": "paysim",
+    "nrows": null,
+    "engine": "auto",
+    "max_tx": null,
+    "graph_max_tx": null,
+    "ml_max_tx": null,
+    "blocks": 8,
+    "models": [
+      "logistic_regression",
+      "random_forest",
+      "xgboost"
+    ],
+    "skip_ablation": false,
+    "from_step": null,
+    "only": null,
+    "skip": null,
+    "dry_run": false
+  },
+  "steps": [
+    {
+      "name": "preprocess",
+      "status": "ok",
+      "seconds": 78.25,
+      "summary": {
+        "source": "paysim",
+        "engine": "spark",
+        "clean_rows": 6362620,
+        "accounts": 9073900,
+        "fraud_rate_pct": 0.1291
+      }
+    },
+    {
+      "name": "eda",
+      "status": "ok",
+      "seconds": 6.88,
+      "summary": {
+        "charts": 8,
+        "fraud_rate_pct": 0.1291
+      }
+    },
+    {
+      "name": "graph",
+      "status": "ok",
+      "seconds": 31.54,
+      "summary": {
+        "nodes": 714803,
+        "edges": 500000,
+        "truncated": true
+      }
+    },
+    {
+      "name": "communities",
+      "status": "ok",
+      "seconds": 54.19,
+      "summary": {
+        "method": "louvain",
+        "communities": 214803,
+        "flagged": 2
+      }
+    },
+    {
+      "name": "ml",
+      "status": "ok",
+      "seconds": 84.52,
+      "summary": {
+        "model": "random_forest",
+        "test_pr_auc": 0.007264,
+        "test_precision": 0.035294,
+        "test_recall": 0.04918
+      }
+    },
+    {
+      "name": "score",
+      "status": "ok",
+      "seconds": 17.17,
+      "summary": {
+        "transactions": 296278,
+        "accounts": 429002,
+        "alerts": 278
+      }
+    }
+  ]
+}

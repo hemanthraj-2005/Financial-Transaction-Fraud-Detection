@@ -1,0 +1,147 @@
+{
+  "runtime_seconds": 52.71,
+  "detection": {
+    "method_requested": "louvain",
+    "fallback_reason": null,
+    "resolution": 1.0,
+    "seed": 42,
+    "method_used": "louvain",
+    "modularity": 0.999978,
+    "n_communities": 214803,
+    "weight_mode": "log_amount"
+  },
+  "n_accounts": 714803,
+  "n_communities": 214803,
+  "size_summary": {
+    "largest_sizes": [
+      92,
+      88,
+      88,
+      84,
+      83
+    ],
+    "median_size": 2.0,
+    "n_size_1": 0,
+    "n_size_2": 174022,
+    "n_size_3_or_more": 40781
+  },
+  "n_flagged_communities": 2,
+  "top_suspicious_communities": [
+    {
+      "community_id": 32532,
+      "n_accounts": 4,
+      "suspicion_score": 91.81,
+      "internal_flow_share": 1.0,
+      "internal_density": 0.25,
+      "mean_pass_through_ratio": 0.010529683985281164,
+      "label_fraud_tx": 0,
+      "label_fraud_rate_pct": 0.0
+    },
+    {
+      "community_id": 23900,
+      "n_accounts": 6,
+      "suspicion_score": 80.39,
+      "internal_flow_share": 1.0,
+      "internal_density": 0.16666666666666666,
+      "mean_pass_through_ratio": 0.02777797461281402,
+      "label_fraud_tx": 0,
+      "label_fraud_rate_pct": 0.0
+    },
+    {
+      "community_id": 14486,
+      "n_accounts": 9,
+      "suspicion_score": 69.86,
+      "internal_flow_share": 1.0,
+      "internal_density": 0.1111111111111111,
+      "mean_pass_through_ratio": 0.014446687523965517,
+      "label_fraud_tx": 0,
+      "label_fraud_rate_pct": 0.0
+    },
+    {
+      "community_id": 13720,
+      "n_accounts": 10,
+      "suspicion_score": 67.26,
+      "internal_flow_share": 1.0,
+      "internal_density": 0.1,
+      "mean_pass_through_ratio": 0.03682179311904668,
+      "label_fraud_tx": 0,
+      "label_fraud_rate_pct": 0.0
+    },
+    {
+      "community_id": 4950,
+      "n_accounts": 17,
+      "suspicion_score": 56.45,
+      "internal_flow_share": 1.0,
+      "internal_density": 0.058823529411764705,
+      "mean_pass_through_ratio": 0.01688648016970203,
+      "label_fraud_tx": 0,
+      "label_fraud_rate_pct": 0.0
+    },
+    {
+      "community_id": 271,
+      "n_accounts": 35,
+      "suspicion_score": 50.34,
+      "internal_flow_share": 1.0,
+      "internal_density": 0.02857142857142857,
+      "mean_pass_through_ratio": 0.0004999566709012921,
+      "label_fraud_tx": 0,
+      "label_fraud_rate_pct": 0.0
+    },
+    {
+      "community_id": 33822,
+      "n_accounts": 3,
+      "suspicion_score": 50.0,
+      "internal_flow_share": 1.0,
+      "internal_density": 0.3333333333333333,
+      "mean_pass_through_ratio": 0.0,
+      "label_fraud_tx": 0,
+      "label_fraud_rate_pct": 0.0
+    },
+    {
+      "community_id": 33823,
+      "n_accounts": 3,
+      "suspicion_score": 50.0,
+      "internal_flow_share": 1.0,
+      "internal_density": 0.3333333333333333,
+      "mean_pass_through_ratio": 0.0,
+      "label_fraud_tx": 0,
+      "label_fraud_rate_pct": 0.0
+    },
+    {
+      "community_id": 33824,
+      "n_accounts": 3,
+      "suspicion_score": 50.0,
+      "internal_flow_share": 1.0,
+      "internal_density": 0.3333333333333333,
+      "mean_pass_through_ratio": 0.0,
+      "label_fraud_tx": 0,
+      "label_fraud_rate_pct": 0.0
+    },
+    {
+      "community_id": 33825,
+      "n_accounts": 3,
+      "suspicion_score": 50.0,
+      "internal_flow_share": 1.0,
+      "internal_density": 0.3333333333333333,
+      "mean_pass_through_ratio": 0.0,
+      "label_fraud_tx": 0,
+      "label_fraud_rate_pct": 0.0
+    }
+  ],
+  "fraud_signal_check": {
+    "note": "Uses the fraud label: for display and reporting only, not a model input.",
+    "n_eligible_communities": 40781,
+    "spearman_score_vs_fraud_rate": -0.0474,
+    "mean_fraud_rate_pct_flagged": 0.0,
+    "mean_fraud_rate_pct_not_flagged": 0.0735
+  },
+  "outputs": {
+    "membership": "/Users/hemanthraj/Financial-Transaction-Fraud-Detection/Financial-Transaction-Fraud-Detection/data/processed/community_membership.parquet",
+    "stats": "/Users/hemanthraj/Financial-Transaction-Fraud-Detection/Financial-Transaction-Fraud-Detection/data/processed/community_stats.parquet"
+  },
+  "notes": [
+    "Detection and the suspicion score are label-free. Columns starting with 'label_' are display-only.",
+    "The suspicion score is a project-defined heuristic: a relative ranking, not a fraud probability.",
+    "For ML, build the graph with --max-step set to the end of the training window first."
+  ]
+}

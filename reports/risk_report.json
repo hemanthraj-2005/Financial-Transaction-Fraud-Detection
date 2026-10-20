@@ -1,0 +1,116 @@
+{
+  "runtime_seconds": 16.45,
+  "source": "paysim",
+  "synthetic_data_warning": false,
+  "model": {
+    "name": "random_forest",
+    "feature_set": "tx_graph",
+    "threshold": 0.5959351312328425
+  },
+  "risk_mapping": {
+    "anchors": {
+      "probability": [
+        0.0,
+        0.29796756561642124,
+        0.5959351312328425,
+        0.7979675656164212,
+        1.0
+      ],
+      "risk": [
+        0.0,
+        30.0,
+        61.0,
+        81.0,
+        100.0
+      ]
+    },
+    "bands": [
+      [
+        "Low",
+        0,
+        30
+      ],
+      [
+        "Medium",
+        31,
+        60
+      ],
+      [
+        "High",
+        61,
+        80
+      ],
+      [
+        "Critical",
+        81,
+        100
+      ]
+    ]
+  },
+  "counts": {
+    "transactions": 296278,
+    "accounts": 429002,
+    "communities": 214803,
+    "alerts_predicted": 278
+  },
+  "band_counts": {
+    "all": {
+      "Low": 278175,
+      "Medium": 17825,
+      "High": 212,
+      "Critical": 66
+    },
+    "test": {
+      "Low": 179334,
+      "Medium": 11864,
+      "High": 85,
+      "Critical": 0
+    }
+  },
+  "top_reason_codes": [
+    {
+      "code": "TYPE_CASH_OUT",
+      "count": 15129
+    },
+    {
+      "code": "TYPE_TRANSFER",
+      "count": 2972
+    },
+    {
+      "code": "HIGH_AMOUNT",
+      "count": 1971
+    },
+    {
+      "code": "NIGHT_TIME",
+      "count": 182
+    },
+    {
+      "code": "RECEIVER_RISKY_COMMUNITY",
+      "count": 2
+    },
+    {
+      "code": "RECEIVER_LARGE_INFLOW",
+      "count": 1
+    }
+  ],
+  "account_level_check": {
+    "split": "test",
+    "definition": "account touches at least one fraud transaction in this window",
+    "n_accounts": 282810,
+    "n_fraud_accounts": 122,
+    "precision_at_high": 0.035294,
+    "recall_at_high": 0.04918,
+    "pr_auc": 0.007753,
+    "roc_auc": 0.89429
+  },
+  "outputs": {
+    "database": "/Users/hemanthraj/Financial-Transaction-Fraud-Detection/Financial-Transaction-Fraud-Detection/data/processed/fraud.db",
+    "report": "/Users/hemanthraj/Financial-Transaction-Fraud-Detection/Financial-Transaction-Fraud-Detection/reports/risk_report.json"
+  },
+  "notes": [
+    "Risk bands are project-defined and calibratable, not scientifically validated.",
+    "Reason codes explain unusual features of a transaction; they are not proof of fraud.",
+    "Scores for fit-window rows are in-sample. Evaluate on split = 'test'.",
+    "Graph/community columns on accounts come from full-data Phase 5/6 runs: display only."
+  ]
+}

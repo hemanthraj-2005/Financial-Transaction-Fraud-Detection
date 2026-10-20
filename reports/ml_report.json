@@ -1,0 +1,245 @@
+{
+  "runtime_seconds": 83.61,
+  "source": "paysim",
+  "synthetic_data_warning": false,
+  "rows": {
+    "input": 6362620,
+    "used": 300000,
+    "truncated_by_max_tx": true,
+    "warmup_block_dropped": 3722,
+    "modelled": 296278
+  },
+  "split": {
+    "min_step": 1,
+    "fit_end": 8,
+    "val_end": 10,
+    "max_step": 15,
+    "fit_fraction": 0.56,
+    "val_fraction": 0.14,
+    "windows": {
+      "fit": {
+        "n_rows": 31376,
+        "n_fraud": 66
+      },
+      "val": {
+        "n_rows": 73619,
+        "n_fraud": 30
+      },
+      "test": {
+        "n_rows": 191283,
+        "n_fraud": 61
+      }
+    },
+    "n_blocks": 8
+  },
+  "feature_sets": {
+    "tx_only": 17,
+    "tx_graph": 55,
+    "tx_graph_balance": 63
+  },
+  "primary_feature_set": "tx_graph",
+  "selected_model": {
+    "name": "random_forest",
+    "threshold": 0.5959351312328425,
+    "selected_by": "validation PR-AUC",
+    "validation": {
+      "n_rows": 73619,
+      "n_fraud": 30,
+      "threshold": 0.5959351312328425,
+      "precision": 0.065217,
+      "recall": 0.1,
+      "f1": 0.078947,
+      "roc_auc": 0.87211,
+      "pr_auc": 0.024512,
+      "tp": 3,
+      "fp": 43,
+      "fn": 27,
+      "tn": 73546,
+      "alert_rate_pct": 0.0625
+    },
+    "test": {
+      "n_rows": 191283,
+      "n_fraud": 61,
+      "threshold": 0.5959351312328425,
+      "precision": 0.035294,
+      "recall": 0.04918,
+      "f1": 0.041096,
+      "roc_auc": 0.881525,
+      "pr_auc": 0.007264,
+      "tp": 3,
+      "fp": 82,
+      "fn": 58,
+      "tn": 191140,
+      "alert_rate_pct": 0.0444
+    },
+    "top_features": [
+      {
+        "feature": "dest_is_merchant",
+        "importance": 0.110462
+      },
+      {
+        "feature": "log_amount",
+        "importance": 0.107858
+      },
+      {
+        "feature": "type_PAYMENT",
+        "importance": 0.107351
+      },
+      {
+        "feature": "amount",
+        "importance": 0.099713
+      },
+      {
+        "feature": "dest_prev_amount_sum",
+        "importance": 0.091012
+      },
+      {
+        "feature": "hour_of_day",
+        "importance": 0.0787
+      },
+      {
+        "feature": "type_TRANSFER",
+        "importance": 0.06238
+      },
+      {
+        "feature": "s_comm_fraud_rate",
+        "importance": 0.061816
+      },
+      {
+        "feature": "is_night",
+        "importance": 0.051618
+      },
+      {
+        "feature": "dest_prev_tx_count",
+        "importance": 0.044362
+      },
+      {
+        "feature": "r_comm_fraud_rate",
+        "importance": 0.039948
+      },
+      {
+        "feature": "dest_steps_since_last_tx",
+        "importance": 0.035147
+      },
+      {
+        "feature": "type_CASH_IN",
+        "importance": 0.033576
+      },
+      {
+        "feature": "type_CASH_OUT",
+        "importance": 0.028496
+      },
+      {
+        "feature": "r_in_amount",
+        "importance": 0.010426
+      }
+    ]
+  },
+  "model_comparison": [
+    {
+      "feature_set": "tx_only",
+      "model": "random_forest",
+      "n_features": 17,
+      "threshold": 0.591066,
+      "val_pr_auc": 0.017038,
+      "test_precision": 0.08,
+      "test_recall": 0.065574,
+      "test_f1": 0.072072,
+      "test_roc_auc": 0.884158,
+      "test_pr_auc": 0.042269,
+      "tp": 4,
+      "fp": 46,
+      "fn": 57,
+      "tn": 191176,
+      "fit_seconds": 0.55
+    },
+    {
+      "feature_set": "tx_graph",
+      "model": "logistic_regression",
+      "n_features": 55,
+      "threshold": 0.0,
+      "val_pr_auc": 0.009554,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "test_roc_auc": 0.891755,
+      "test_pr_auc": 0.007037,
+      "tp": 0,
+      "fp": 14,
+      "fn": 61,
+      "tn": 191208,
+      "fit_seconds": 0.24
+    },
+    {
+      "feature_set": "tx_graph",
+      "model": "random_forest",
+      "n_features": 55,
+      "threshold": 0.595935,
+      "val_pr_auc": 0.024512,
+      "test_precision": 0.035294,
+      "test_recall": 0.04918,
+      "test_f1": 0.041096,
+      "test_roc_auc": 0.881525,
+      "test_pr_auc": 0.007264,
+      "tp": 3,
+      "fp": 82,
+      "fn": 58,
+      "tn": 191140,
+      "fit_seconds": 0.51
+    },
+    {
+      "feature_set": "tx_graph",
+      "model": "xgboost",
+      "n_features": 55,
+      "threshold": 0.93259,
+      "val_pr_auc": 0.008577,
+      "test_precision": 0.034483,
+      "test_recall": 0.032787,
+      "test_f1": 0.033613,
+      "test_roc_auc": 0.860514,
+      "test_pr_auc": 0.023281,
+      "tp": 2,
+      "fp": 56,
+      "fn": 59,
+      "tn": 191166,
+      "fit_seconds": 0.85
+    },
+    {
+      "feature_set": "tx_graph_balance",
+      "model": "random_forest",
+      "n_features": 63,
+      "threshold": 0.485587,
+      "val_pr_auc": 0.933725,
+      "test_precision": 1.0,
+      "test_recall": 0.868852,
+      "test_f1": 0.929825,
+      "test_roc_auc": 0.968247,
+      "test_pr_auc": 0.892872,
+      "tp": 53,
+      "fp": 0,
+      "fn": 8,
+      "tn": 191222,
+      "fit_seconds": 0.58
+    }
+  ],
+  "leakage_controls": [
+    "Time-based split by step: fit (first part), validation (threshold tuning + model selection), test (last part, untouched).",
+    "Graph/community features for a transaction in block b come from a graph built on blocks < b only (no future data).",
+    "The only label-based feature (community fraud rate) uses labels from earlier blocks and from steps <= end of the fit window, so a row's own label and any validation/test label never reach its features.",
+    "Balance columns and balance-derived features are excluded from the primary feature set (ablation only); isFlaggedFraud is never used.",
+    "The scaler (Logistic Regression) is fitted on the fit window only; model choice uses validation PR-AUC, never the test window.",
+    "Block 0 has no history, so it is dropped as a warm-up."
+  ],
+  "outputs": {
+    "model": "/Users/hemanthraj/Financial-Transaction-Fraud-Detection/Financial-Transaction-Fraud-Detection/models/best_model.joblib",
+    "features": "/Users/hemanthraj/Financial-Transaction-Fraud-Detection/Financial-Transaction-Fraud-Detection/data/processed/ml_features.parquet",
+    "predictions": "/Users/hemanthraj/Financial-Transaction-Fraud-Detection/Financial-Transaction-Fraud-Detection/data/processed/ml_predictions.parquet",
+    "comparison_csv": "/Users/hemanthraj/Financial-Transaction-Fraud-Detection/Financial-Transaction-Fraud-Detection/reports/model_comparison.csv"
+  },
+  "notes": [
+    "Metrics come from a time-based test window; they are batch results, not real-time detection.",
+    "tx_graph_balance is an ABLATION: balance columns reveal the label in PaySim, so its scores are inflated.",
+    "Scores for fit-window rows in ml_predictions are in-sample; use split == 'test' for honest evaluation.",
+    "Fraud labels are assumed known right after each block ends; real systems have label delays."
+  ]
+}
